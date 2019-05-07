@@ -6,6 +6,7 @@
 
 
 \begin{document}
+
 	
 	\maketitle
 	\begin{center}
@@ -23,21 +24,33 @@
 			\hline
 			Attribute name & data type & Attribute name & data type & Attribute name & data type \\
 			\hline
-			Author & String & Number of helpful & int & Location & String \\ 
+			Author & String & No. helpful & int & Location & int \\ 
 			Content & String & Overall & int & Cleanliness & int \\ 
-			Date & String & Value & int & Check in/front desk & int \\ 
-			Number of readers & int & Rooms & int & Service & int \\
-			Business service & int \\
+			Date & String & Value & int & Check in/Front desk & int \\ 
+			No. readers & int & Rooms & int & Service & int \\
+			Business service & int & - & - & - & -\\
 			\hline
 		
 		\end{tabular}
 	\end{center}
 	Relation Schema: 
 	\newline
-	HotelReview(Author,Content,Date)
+	HotelReview(Author,Content,Date,No. reader,No. helpful,Overall,Value,Rooms,Location,Cleanliness,Check in/Front desk,Service,Business service).
+	\newline
+	Author attribute is the primary key since all other attributes rely on the author and in order to write a review, you must have an author (no fields in this attribute can be null).
 	
 	\subsection{EX2}
-	
+	\begin{math}
+		\textrm{Author}
+		\rightarrow
+		\textrm{Content,Date,No. reader,No. helpful,Overall,Value,Rooms,Location,Cleanliness,Check in/Front desk,Service, Business service}
+	\end{math}
+	\newline
+	Author (attribute) should be the determinant for all other attributes since it is the author who decides the scores and the content of the review on a hotel.
+	\newline
+	Candidate keys:
+	\newline
+	Author, Author + Content, Author + Content + Date. 
 	\subsection{EX3}
 	
 	\section{Entity-Relationship Diagramming}
