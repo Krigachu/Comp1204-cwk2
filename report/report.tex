@@ -1,9 +1,10 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{geometry}
 
 \title{COMP1204 Data management: Coursework 2}
 \author{Kritagya Gurung}
-
 
 \begin{document}
 
@@ -24,34 +25,61 @@
 			\hline
 			Attribute name & data type & Attribute name & data type & Attribute name & data type \\
 			\hline
-			Author & String & No. helpful & int & Location & int \\ 
-			Content & String & Overall & int & Cleanliness & int \\ 
-			Date & String & Value & int & Check in/Front desk & int \\ 
-			No. readers & int & Rooms & int & Service & int \\
-			Business service & int & - & - & - & -\\
+			Hotel ID & int & Overall rating & float & Avg. Price & int \\ 
+			URL & string & Author & string & Content & string \\ 
+			Date & string & No. Reader & int & No. Helpful & int \\ 
+			Overall & int & Value & int & Rooms & int \\
+			Location & int & Cleanliness & int & Check in/Front desk & int \\
+			Service & int & Business service & int &  &  \\
 			\hline
-		
 		\end{tabular}
 	\end{center}
 	Relation Schema: 
 	\newline
-	HotelReview(Author,Content,Date,No. reader,No. helpful,Overall,Value,Rooms,Location,Cleanliness,Check in/Front desk,Service,Business service).
+	(R1)Review(Hotel ID, Overall rating, Avg. Price, URL, Author, Content, Date, No. Reader, No. Helpful, Overall, Value, Rooms, Location, Cleanliness, Check in/Front desk, Service, Business service).
 	\newline
-	Author attribute is the primary key since all other attributes rely on the author and in order to write a review, you must have an author (no fields in this attribute can be null).
-	
+	The primary key consists of Hotel ID, Author and date. This is because all other attributes rely on the attributes mentioned and in order to write a review, you must have an author, the date that review was written on and what hotel the review is for.
+		
 	\subsection{EX2}
 	\begin{math}
-		\textrm{Author}
+		\textrm{Hotel ID}
 		\rightarrow
-		\textrm{Content,Date,No. reader,No. helpful,Overall,Value,Rooms,Location,Cleanliness,Check in/Front desk,Service, Business service}
+		\textrm{Overall rating, Avg. Price, URL}
 	\end{math}
 	\newline
-	Author (attribute) should be the determinant for all other attributes since it is the author who decides the scores and the content of the review on a hotel.
+	Hotel ID is the determinant for Overall rating, Avg. Price and URL. This is because each hotel has their own distinct properties.
+	\newline
+	\begin{math}
+		\textrm{Author, Date}
+		\rightarrow
+	\end{math}
+	Content, No. Reader, No. Helpful, Overall, Value, Rooms, Location, Cleanliness, Check in/Front desk, Service, Business service.
+	\newline
+	Author and Date should be the determinant for all other attributes since it is the author who decides the scores and the content of the review on a hotel. Additionally, the author must stay at the hotel thus date is used to show when the hotel was reviewed.
 	\newline
 	Candidate keys:
 	\newline
-	Author, Author + Content, Author + Content + Date. 
+	Hotel ID, Author, Date
 	\subsection{EX3}
+	\begin{center}
+		\begin{tabular}{||c c | c c | c c ||} 
+			\hline
+			Attribute name & data type & Attribute name & data type & Attribute name & data type \\
+			\hline
+			Hotel ID & int & Overall rating & float & Avg. Price & int \\ 
+			URL & string & Author & string & Content & string \\ 
+			Date & string & No. Reader & int & No. Helpful & int \\ 
+			Overall & int & Value & int & Rooms & int \\
+			Location & int & Cleanliness & int & Check in/Front desk & int \\
+			Service & int & Business service & int & User ID & int \\
+			\hline
+		\end{tabular}
+	\end{center}
+	Hotel(Hotel ID, Avg. Price, Date) \\
+	Review(Hotel ID, User ID, Content, Date, No. Reader, No. Helpful, Overall, Value, Rooms, Location, Cleanliness, Check in/Front desk, Service, Business service) \\
+	Author(User ID, Author) \\
+	Primary Key : Hotel ID, User ID, Date \\
+	Foreign Key : Hotel ID, User ID \\
 	
 	\section{Entity-Relationship Diagramming}
 	
@@ -61,12 +89,12 @@
 	
 	\subsection{EX5}
 	\begin{eqnarray}
-	\sigma_{User_ID = given_ID}(Review)
+	\sigma_{User ID = given_ID}(Review)
 	\end{eqnarray}
 		
 	\subsection{EX6}
 	\begin{eqnarray}
-	\sigma _{No. reviews given > 2}((User_ID) \gamma _{count(User_ID) \rightarrow No. reviews given}(Review)) \bowtie Author
+	\sigma _{No. reviews given > 2}((User ID) \gamma _{count(User ID) \rightarrow No. reviews given}(Review)) \bowtie Author
 	\end{eqnarray}
 	
 	\subsection{EX7}
