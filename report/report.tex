@@ -2,7 +2,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
 \usepackage{geometry}
+\usepackage{graphicx}
 
+\graphicspath{.}
 \title{COMP1204 Data management: Coursework 2}
 \author{Kritagya Gurung}
 
@@ -84,22 +86,30 @@
 	\section{Entity-Relationship Diagramming}
 	
 	\subsection{EX4}
+	\includegraphics[width=10cm, height=10cm]{EX4_ERD_Tripadvisor.png}
+	
 	
 	\section{Relational Algebra}
 	
 	\subsection{EX5}
 	\begin{eqnarray}
-	\sigma_{User ID = given_ID}(Review)
+	\sigma_{User ID = given ID}(Review)
 	\end{eqnarray}
 		
 	\subsection{EX6}
 	\begin{eqnarray}
-	\sigma _{No. reviews given > 2}((User ID) \gamma _{count(User ID) \rightarrow No. reviews given}(Review)) \bowtie Author
+	\sigma _{No. reviews given > 2}(_{User ID} \gamma _{count(User ID) \rightarrow No. reviews given}(Review)) \bowtie Author
 	\end{eqnarray}
 	
 	\subsection{EX7}
+	\begin{eqnarray}
+		\sigma _{No. reviews recieved > 10}(_{Hotel ID} \gamma _{count(Hotel ID) \rightarrow No. reviews recieved}(Review))
+	\end{eqnarray}
 	
 	\subsection{EX8}
+	\begin{eqnarray}
+	\sigma _{Average cleanliness \geq 4.5 \wedge Overall rating > 3}(_{Hotel ID} \gamma _{avg(Cleanliness) \rightarrow Average cleanliness}(Review) \bowtie (Hotel))
+	\end{eqnarray}
 	
 	\section{SQL Queries}
 	
