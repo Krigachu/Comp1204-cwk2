@@ -114,18 +114,71 @@
 	\section{SQL Queries}
 	
 	\subsection{EX9}
-	I would added indexes to Hotel\_ID and User\_ID attributes as they are used as the main attributes in table joins, they are used in multiple queries and are foreign keys.
+	CREATE TABLE HotelReviews(
+	Hotel\_ID INTEGER, 
+	Overall\_rating REAL, 
+	Average\_price INTEGER, 
+	URL TEXT, 
+	Author TEXT, 
+	Content TEXT, 
+	Date TEXT, 
+	Number\_of\_readers INTEGER, 
+	Number\_of\_helpful INTEGER, 
+	Overall INTEGER, 
+	Value INTEGER, 
+	Rooms INTEGER, 
+	Location INTEGER,
+	Cleanliness INTEGER, 
+	Check\_in\_and\_Front\_desk INTEGER, 
+	Service INTEGER, 
+	Business\_service INTEGER, 
+	PRIMARY KEY(Hotel\_ID, Author, Date) 
+	);
+	
 	
 	\subsection{EX10}
 	Bash scripting not available.
 	
 	\subsection{EX11}
-		
-	\subsection{EX12}
+	CREATE TABLE Hotel (
+	Hotel\_ID INTEGER PRIMARY KEY,
+	Overall\_rating REAL,
+	Average\_price INTEGER,
+	URL TEXT
+	); \\
 	
+	CREATE TABLE Author (
+	User\_ID INTEGER,
+	Author TEXT
+	); \\
+	
+	CREATE TABLE Review (
+	Hotel\_ID INTEGER REFERENCES HOTEL,
+	Overall\_rating REAL,
+	Average\_price INTEGER,
+	URL TEXT,
+	User\_ID TEXT REFERENCES AUTHOR,
+	Content TEXT,
+	Date TEXT PRIMARY KEY,
+	Number\_of\_readers INTEGER,
+	Number\_of\_helpful INTEGER,
+	Overall INTEGER,
+	Value INTEGER,
+	Rooms INTEGER,
+	Location INTEGER,
+	Cleanliness INTEGER,
+	Check\_in\_and\_Front\_desk INTEGER,
+	Service INTEGER,
+	Business\_service INTEGER
+	);
+	
+	\subsection{EX12}
+	As the bash scripting does not work as intented, I have made my custom test data.
 	\subsection{EX13}
+	I would added indexes to Hotel\_ID and User\_ID attributes as they are used as the main attributes in table joins, they are used in multiple queries and are foreign keys.
 	
 	\subsection{EX14}
+	
 	
 	\section{Conclusions}
 	

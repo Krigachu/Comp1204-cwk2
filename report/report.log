@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.1.22)  19 MAY 2019 22:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.1.22)  19 MAY 2019 22:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -564,7 +564,23 @@ Overfull \hbox (25.40015pt too wide) in alignment at lines 110--112
  [][][] []
  []
 
-[3 <./EX4_ERD_Tripadvisor.png>] [4] (./report.aux) ) 
+[3 <./EX4_ERD_Tripadvisor.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 143--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--154
+
+ []
+
+
+Overfull \hbox (1.34334pt too wide) in paragraph at lines 155--174
+[]\OT1/cmr/m/n/10 CREATE TA-BLE Re-view ( Ho-tel[]ID IN-TE-GER REF-ER-ENCES HO-
+TEL, Over-all[]rating REAL,
+ []
+
+[4] (./report.aux) ) 
 Here is how much of TeX's memory you used:
  3618 strings out of 494945
  49886 string characters out of 6181032
@@ -573,16 +589,16 @@ Here is how much of TeX's memory you used:
  7587 words of font info for 27 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,6n,32p,271b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on report.pdf (4 pages, 142839 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on report.pdf (4 pages, 145595 bytes).
 PDF statistics:
  56 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream

@@ -1,16 +1,16 @@
-create table Hotel (
+CREATE TABLE Hotel (
 	Hotel_ID INTEGER PRIMARY KEY,
 	Overall_rating REAL,
 	Average_price INTEGER,
 	URL TEXT
 	);
 
-create table Author (
+CREATE TABLE Author (
 	User_ID INTEGER,
 	Author TEXT
 	);
 
-create table Review (
+CREATE TABLE Review (
 	Hotel_ID INTEGER REFERENCES HOTEL,
         Overall_rating REAL,
         Average_price INTEGER,
