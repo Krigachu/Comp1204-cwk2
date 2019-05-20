@@ -12,12 +12,9 @@ CREATE TABLE Author (
 
 CREATE TABLE Review (
 	Hotel_ID INTEGER,
-        Overall_rating REAL,
-        Average_price INTEGER,
-        URL TEXT,
         User_ID TEXT,
         Content TEXT,
-        Date TEXT PRIMARY KEY,
+        Date TEXT,
         Number_of_readers INTEGER,
         Number_of_helpful INTEGER,
         Overall INTEGER,
@@ -28,7 +25,8 @@ CREATE TABLE Review (
         Check_in_and_Front_desk INTEGER,
         Service INTEGER,
         Business_service INTEGER,
-	FOREIGN KEY (Hotel_ID) REFERENCES Hotel(Hotel_ID)
-	FOREIGN KEY (User_ID) REFERENCES Author(User_ID)
+	FOREIGN KEY (Hotel_ID) REFERENCES Hotel(Hotel_ID),
+	FOREIGN KEY (User_ID) REFERENCES Author(User_ID),
+	PRIMARY KEY (Hotel_ID,User_ID,Date)
         );
 
