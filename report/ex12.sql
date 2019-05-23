@@ -16,12 +16,12 @@ INSERT INTO Review(Hotel_ID,User_ID,Content,Date,Number_of_readers,Number_of_hel
 	(11112,3,"contentTest","dateTest",1,2,3,4,5,6,7,8,9,10),
 	(11112,3,"contentTest","dateTest2",1,2,3,4,5,6,7,8,9,10),
 	(11112,3,"contentTest","dateTest3",1,2,3,4,5,6,7,8,9,10),
-	(11112,3,"contentTest","dateTest4",1,2,3,4,5,6,7,8,9,10),
+	(11112,3,"contentTest","dateTest4",1,2,3,4,5,6,3,8,9,10),
 	(11112,3,"contentTest","dateTest5",1,2,3,4,5,6,7,8,9,10),
 	(11112,3,"contentTest","dateTest6",1,2,3,4,5,6,7,8,9,10),
-	(11112,3,"contentTest","dateTest7",1,2,3,4,5,6,7,8,9,10),
+	(11112,3,"contentTest","dateTest7",1,2,3,4,5,6,3,8,9,10),
 	(11112,3,"contentTest","dateTest8",1,2,3,4,5,6,7,8,9,10),
 	(11112,3,"contentTest","dateTest9",1,2,3,4,5,6,7,8,9,10),
 	(11112,3,"contentTest","dateTest10",1,2,3,4,5,6,7,8,9,10),
-	(11112,3,"contentTest","dateTest11",1,2,3,4,5,6,7,8,9,10);
+	(11112,3,"contentTest","dateTest11",1,2,3,4,5,6,3,8,9,10);
 DROP TABLE IF EXISTS HotelReviews;
