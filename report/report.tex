@@ -107,7 +107,7 @@
 	
 	\subsection{EX8}
 	\begin{eqnarray}
-	\sigma _{Average cleanliness \geq 4.5 \wedge Overall rating > 3}(_{Hotel\_ID} \gamma _{avg(Cleanliness) \rightarrow Average cleanliness}(Review) \bowtie (Hotel))
+	\sigma _{Average cleanliness \geq 4.5 \wedge Overall rating > 3}((_{Hotel\_ID} \gamma _{avg(Cleanliness) \rightarrow Average cleanliness}(Review)) \bowtie (Hotel))
 	\end{eqnarray}
 	
 	\section{SQL Queries}
@@ -183,7 +183,7 @@
 	(2,"testAuthor2"),
 	(3,"testAuthor3");
 	\\
-	INSERT INTO Review(Hotel\_ID,User\_ID,Content,Date,Number\_of\_readers,Number\_of\_helpful,Overall,Value,Rooms,Location,Cleanliness,Check\_in\_From\_desk,Service,Business\_service)
+	INSERT INTO Review(Hotel\_ID, User\_ID, Content, Date,Number\_of\_readers, Number\_of\_helpful, Overall, Value, Rooms, Location, Cleanliness, Check\_in\_From\_desk, Service, Business\_service)
 	VALUES(11111,1,"contentTest","dateTest",1,2,3,4,5,6,7,8,9,10),
 	(11112,2,"contentTest","dateTest",1,2,3,4,5,6,7,8,9,10),
 	(11111,3,"contentTest","dateTest",1,2,3,4,5,6,7,8,9,10),
@@ -205,7 +205,7 @@
 	
 	
 	\subsection{EX13}
-	I would added indexes to Hotel\_ID and User\_ID attributes as they are used as the main attributes in table joins, they are used in multiple queries and are foreign keys. \\
+	I would have added indexes to Hotel\_ID and User\_ID attributes as they are used as the main attributes in table joins, they are used in multiple queries and are foreign keys. \\
 	CREATE INDEX Hotel\_ID\_Index ON Hotel(Hotel\_ID); \\
 	CREATE INDEX User\_ID\_Index ON Author(User\_ID);
 	
@@ -249,6 +249,6 @@
 	\section{Conclusions}
 	
 	\subsection{EX15}
-
+	
 
 \end{document}
