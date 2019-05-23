@@ -9,7 +9,6 @@
 \author{Kritagya Gurung}
 
 \begin{document}
-
 	
 	\maketitle
 	\begin{center}
@@ -93,48 +92,47 @@
 	
 	\subsection{EX5}
 	\begin{eqnarray}
-	\sigma_{User ID = given ID}(Review)
+	\sigma_{User\_ID = given\_ID}(Review)
 	\end{eqnarray}
 		
 	\subsection{EX6}
 	\begin{eqnarray}
-	\sigma _{No. reviews given > 2}(_{User ID} \gamma _{count(User ID) \rightarrow No. reviews given}(Review)) \bowtie Author
+	\sigma _{No. reviews given > 2}(_{User\_ID} \gamma _{count(User\_ID) \rightarrow No. reviews given}(Review)) \bowtie Author
 	\end{eqnarray}
 	
 	\subsection{EX7}
 	\begin{eqnarray}
-		\sigma _{No. reviews recieved > 10}(_{Hotel ID} \gamma _{count(Hotel ID) \rightarrow No. reviews received}(Review))
+		\sigma _{No. reviews received > 10}(_{Hotel\_ID} \gamma _{count(Hotel\_ID) \rightarrow No. reviews received}(Review))
 	\end{eqnarray}
 	
 	\subsection{EX8}
 	\begin{eqnarray}
-	\sigma _{Average cleanliness \geq 4.5 \wedge Overall rating > 3}(_{Hotel ID} \gamma _{avg(Cleanliness) \rightarrow Average cleanliness}(Review) \bowtie (Hotel))
+	\sigma _{Average cleanliness \geq 4.5 \wedge Overall rating > 3}(_{Hotel\_ID} \gamma _{avg(Cleanliness) \rightarrow Average cleanliness}(Review) \bowtie (Hotel))
 	\end{eqnarray}
 	
 	\section{SQL Queries}
 	
 	\subsection{EX9}
 	CREATE TABLE HotelReviews(
-	Hotel\_ID INTEGER, 
-	Overall\_rating REAL, 
-	Average\_price INTEGER, 
-	URL TEXT, 
-	Author TEXT, 
-	Content TEXT, 
-	Date TEXT, 
-	Number\_of\_readers INTEGER, 
-	Number\_of\_helpful INTEGER, 
-	Overall INTEGER, 
-	Value INTEGER, 
-	Rooms INTEGER, 
+	Hotel\_ID INTEGER,
+	Overall\_rating REAL,
+	Average\_price INTEGER,
+	URL TEXT,
+	Author TEXT,
+	Content TEXT,
+	Date TEXT,
+	Number\_of\_readers INTEGER,
+	Number\_of\_helpful INTEGER,
+	Overall INTEGER,
+	Value INTEGER,
+	Rooms INTEGER,
 	Location INTEGER,
-	Cleanliness INTEGER, 
-	Check\_in\_and\_Front\_desk INTEGER, 
-	Service INTEGER, 
-	Business\_service INTEGER, 
-	PRIMARY KEY(Hotel\_ID, Author, Date) 
+	Cleanliness INTEGER,
+	Check\_in\_and\_Front\_desk INTEGER,
+	Service INTEGER,
+	Business\_service INTEGER,
+	PRIMARY KEY(Hotel\_ID, Author, Date)
 	);
-	
 	
 	\subsection{EX10}
 	Bash scripting not available.
@@ -145,21 +143,18 @@
 	Overall\_rating REAL,
 	Average\_price INTEGER,
 	URL TEXT
-	); \\
-	
+	); 
+	\\
 	CREATE TABLE Author (
-	User\_ID INTEGER,
+	User\_ID INTEGER PRIMARY KEY,
 	Author TEXT
-	); \\
-	
+	);	
+	\\
 	CREATE TABLE Review (
-	Hotel\_ID INTEGER REFERENCES HOTEL,
-	Overall\_rating REAL,
-	Average\_price INTEGER,
-	URL TEXT,
-	User\_ID TEXT REFERENCES AUTHOR,
+	Hotel\_ID INTEGER,
+	User\_ID TEXT,
 	Content TEXT,
-	Date TEXT PRIMARY KEY,
+	Date TEXT,
 	Number\_of\_readers INTEGER,
 	Number\_of\_helpful INTEGER,
 	Overall INTEGER,
@@ -169,19 +164,91 @@
 	Cleanliness INTEGER,
 	Check\_in\_and\_Front\_desk INTEGER,
 	Service INTEGER,
-	Business\_service INTEGER
+	Business\_service INTEGER,
+	FOREIGN KEY (Hotel\_ID) REFERENCES Hotel(Hotel\_ID),
+	FOREIGN KEY (User\_ID) REFERENCES Author(User\_ID),
+	PRIMARY KEY (Hotel\_ID,User\_ID,Date)
 	);
+	
 	
 	\subsection{EX12}
 	As the bash scripting does not work as intented, I have made my custom test data.
+	Here is the test data set I used.
+	INSERT INTO Hotel(Hotel\_ID,Overall\_rating,Average\_price,URL)
+	VALUES(11111,2.0,13,"test url1"),
+	(11112,4,123,"test url2");
+	\\
+	INSERT INTO Author(User\_ID,Author)
+	VALUES(1,"testAuthor1"),
+	(2,"testAuthor2"),
+	(3,"testAuthor3");
+	\\
+	INSERT INTO Review(Hotel\_ID,User\_ID,Content,Date,Number\_of\_readers,Number\_of\_helpful,Overall,Value,Rooms,Location,Cleanliness,Check\_in\_From\_desk,Service,Business\_service)
+	VALUES(11111,1,"contentTest","dateTest",1,2,3,4,5,6,7,8,9,10),
+	(11112,2,"contentTest","dateTest",1,2,3,4,5,6,7,8,9,10),
+	(11111,3,"contentTest","dateTest",1,2,3,4,5,6,7,8,9,10),
+	(11112,2,"contentTest","dateTest2",1,2,3,4,5,6,7,8,9,10),
+	(11111,2,"contentTest","dateTest",1,2,3,4,5,6,7,8,9,10),
+	(11112,3,"contentTest","dateTest",1,2,3,4,5,6,7,8,9,10),
+	(11112,3,"contentTest","dateTest2",1,2,3,4,5,6,7,8,9,10),
+	(11112,3,"contentTest","dateTest3",1,2,3,4,5,6,7,8,9,10),
+	(11112,3,"contentTest","dateTest4",1,2,3,4,5,6,3,8,9,10),
+	(11112,3,"contentTest","dateTest5",1,2,3,4,5,6,7,8,9,10),
+	(11112,3,"contentTest","dateTest6",1,2,3,4,5,6,7,8,9,10),
+	(11112,3,"contentTest","dateTest7",1,2,3,4,5,6,3,8,9,10),
+	(11112,3,"contentTest","dateTest8",1,2,3,4,5,6,7,8,9,10),
+	(11112,3,"contentTest","dateTest9",1,2,3,4,5,6,7,8,9,10),
+	(11112,3,"contentTest","dateTest10",1,2,3,4,5,6,7,8,9,10),
+	(11112,3,"contentTest","dateTest11",1,2,3,4,5,6,3,8,9,10);
+	\\
+	DROP TABLE IF EXISTS HotelReviews;
+	
+	
 	\subsection{EX13}
-	I would added indexes to Hotel\_ID and User\_ID attributes as they are used as the main attributes in table joins, they are used in multiple queries and are foreign keys.
+	I would added indexes to Hotel\_ID and User\_ID attributes as they are used as the main attributes in table joins, they are used in multiple queries and are foreign keys. \\
+	CREATE INDEX Hotel\_ID\_Index ON Hotel(Hotel\_ID); \\
+	CREATE INDEX User\_ID\_Index ON Author(User\_ID);
 	
 	\subsection{EX14}
-	
+	\textbf{ex5.sql} \\
+	SELECT  * FROM Review WHERE User\_ID=2;
+	\\
+	(replace 2 with a given id)
+	\\
+	\textbf{ex6.sql} \\
+	SELECT Hotel\_ID,count(*) AS Number\_of\_reviews\_recieved
+	FROM Review
+	GROUP BY Hotel\_ID HAVING count(*); 
+	\begin{math}
+	>
+	\end{math} 
+	10;
+	\\
+	\textbf{ex7.sql} \\
+	SELECT Review.User\_ID,Author.Author , count(*) AS Number\_of\_reviews\_given
+	FROM Review INNER JOIN Author ON Author.User\_ID = Review.User\_ID 
+	GROUP BY Review.User\_ID HAVING count(*) 
+	\begin{math}
+	>
+	\end{math} 
+	2;
+	\\
+	\textbf{ex8.sql} \\
+	SELECT Review.Hotel\_ID, Hotel.Overall\_rating, Hotel.Average\_price, Hotel.URL , avg(Review.Cleanliness) AS Average\_cleanliness
+	FROM Review INNER JOIN Hotel ON Review.Hotel\_ID = Hotel.Hotel\_ID 
+	GROUP BY Review.Hotel\_ID HAVING Average\_cleanliness 
+	\begin{math}
+	\geq
+	\end{math}
+	 4.5 AND Overall\_rating 
+	 \begin{math}
+	 >
+	 \end{math}
+	 3;
 	
 	\section{Conclusions}
 	
 	\subsection{EX15}
+
 
 \end{document}
